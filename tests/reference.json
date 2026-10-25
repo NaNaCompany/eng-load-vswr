@@ -1,0 +1,63 @@
+{
+  "id": "E149",
+  "value": 2.618033988749895,
+  "method": "Independent Python Decimal evaluation at 90 decimal digits; mathematical constants supplied to at least 85 digits. Expected numbers rounded once to IEEE-754 binary64. No JS imports.",
+  "cases": [
+    {
+      "name": "matched load",
+      "values": {
+        "r": 50,
+        "reactance": 0
+      },
+      "expected": 1.0
+    },
+    {
+      "name": "double resistive load",
+      "values": {
+        "r": 100,
+        "reactance": 0
+      },
+      "expected": 2.0
+    },
+    {
+      "name": "half resistive load",
+      "values": {
+        "r": 25,
+        "reactance": 0
+      },
+      "expected": 2.0
+    },
+    {
+      "name": "capacitive sign has same VSWR",
+      "values": {
+        "reactance": -50
+      },
+      "expected": 2.618033988749895
+    },
+    {
+      "name": "short circuit has infinite VSWR",
+      "values": {
+        "r": 0,
+        "reactance": 0
+      },
+      "kind": "no-result"
+    },
+    {
+      "name": "pure reactance has infinite VSWR",
+      "values": {
+        "r": 0,
+        "reactance": 50
+      },
+      "kind": "no-result"
+    },
+    {
+      "name": "large finite mismatch without cancellation",
+      "values": {
+        "z0": 1,
+        "r": 1e+200,
+        "reactance": 0
+      },
+      "expected": 1e+200
+    }
+  ]
+}
